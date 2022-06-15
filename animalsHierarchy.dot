@@ -1,0 +1,29 @@
+digraph AnimalsHierarchy {
+  label = "\n\nAnimals hierarchy tree"
+
+  rankdir="BT"
+  node [style="rounded, filled" colorscheme=pastel15]
+  edge [arrowhead="onormal" arrowtail="onormal" arrowsize=2 color="/greys4/4"]
+
+  abstractStereotype [label="\<\<abstract\>\>" fontsize=12 fontname="Roboto Italic" fontcolor="/greys8/7" shape=box color="/greys9/2" ]
+  Animals [color=3 shape=box fontsize=14 fontname="Roboto Bold" fontcolor="/greys8/7" margin="0.3,0.15"]
+
+  Animals -> abstractStereotype [arrowhead=vee arrowtail=vee color="/greys4/4" style=dashed arrowsize=1 ]
+
+  {
+    node [shape=egg]
+    Wolfs [color=5]
+    Lions [color=4]
+  }
+
+  {
+    node [shape=box margin="0.3, 0.055"]
+    Dogs [color=1]
+    Cats [color=2]
+  }
+
+  Wolfs -> Animals
+  Lions -> Animals
+  Dogs -> Wolfs
+  Cats -> Lions
+}
